@@ -4,7 +4,7 @@ A twitch chat overlay for OBS, using Firebot as the information source.
 
 ## Setup
 
-Download the [release](https://github.com/djnrrd/firebot_chat_overlay/releases/tag/1.1) or clone this repository.  Extract the files to a safe location.
+Download an official [release](https://github.com/djnrrd/firebot_chat_overlay/releases/) from upstream, or clone this repository.  Extract the files to a safe location.
 
 Create a web browser overlay in OBS and point it to the location of the `chat.html` file
 
@@ -25,7 +25,7 @@ For the "Event Name" variable, enter `chat_overlay_msg` and for the Event Data v
   "color": "$chatUserColor",
   "display-name": "$userDisplayName",
   "pronouns": "$pronouns[$userDisplayName, 0, ]",
-  "msg_text": "$chatMessage",
+  "msg_text": $convertToJSON[$chatMessage],
   "emote_names": $chatMessageEmoteNames,
   "emote_urls": $chatMessageEmoteUrls,
   "animated_emote_urls": $chatMessageAnimatedEmoteUrls
@@ -86,7 +86,8 @@ The following HTML represents an individual chat message, all items surrounded b
 ```
 
 ## Change Log
-
+* Dev
+  * Incorporating various changes from out of tree.
 * 1.2 
   * Added options to clear, and fade out messages after a delay.
   * Make messages consisting of only emotes use the next emote size up
