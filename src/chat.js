@@ -48,7 +48,7 @@ function replace_emotes(chat_msg) {
     if (just_emote) {
       emote_url = emote_url.replace(/1\.0$/, "2.0");
     }
-    let replace_txt = `<img src="${emote_url}">`;
+    let replace_txt = `<img src="${emote_url}" class="emotes">`;
     return_str = return_str.replace(chat_msg.emote_names[i], replace_txt);
   }
   return return_str;
